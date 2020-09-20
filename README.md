@@ -3,4 +3,4 @@ The repository contains source code for the free software called LandsatShadowRe
 Program is written on Python 3 and pyQT5. 
 Software uses 3rd party libraries: numpy, pandas, elevation, richdem, pyQT.
 
-Developer: Sergei Shevyrev (http://lefa.geologov.net) MIT License.
+Developer: Sergei Shevyrev (http://lefa.geologov.net). MIT License.
