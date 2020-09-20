@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DlgConfigure</class>
+ <widget class="QDialog" name="DlgConfigure">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>425</width>
+    <height>344</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LSR Configure</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="4">
+    <widget class="QLabel" name="label_3">
+     <property name="font">
+      <font>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Topographic correction algorithm:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QCheckBox" name="chkSCS_C">
+     <property name="text">
+      <string>SCS+C</string>
+     </property>
+     <property name="tristate">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="QCheckBox" name="chkNone">
+     <property name="text">
+      <string>None</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLabel" name="label_4">
+     <property name="font">
+      <font>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Solar azimuth:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLineEdit" name="txtSolarAzimuth"/>
+   </item>
+   <item row="2" column="3" colspan="3">
+    <widget class="QLabel" name="label_5">
+     <property name="font">
+      <font>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Solar angle:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="6">
+    <widget class="QLineEdit" name="txtSolarAngle"/>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Products to be generated:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="5" rowspan="2" colspan="2">
+    <widget class="QPushButton" name="BtnUnMarkAll">
+     <property name="text">
+      <string>Uncheck All</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" rowspan="2">
+    <widget class="QCheckBox" name="chkNDVI">
+     <property name="text">
+      <string>NDVI</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3" rowspan="2">
+    <widget class="QCheckBox" name="chkCM">
+     <property name="text">
+      <string>CM</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="5" rowspan="2" colspan="2">
+    <widget class="QPushButton" name="BtnMarkAll">
+     <property name="text">
+      <string>Check all</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QCheckBox" name="chkAOI">
+     <property name="text">
+      <string>AOI</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3">
+    <widget class="QCheckBox" name="chkCA">
+     <property name="text">
+      <string>CA</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QCheckBox" name="checkBox_5">
+     <property name="text">
+      <string>HA</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3">
+    <widget class="QCheckBox" name="chkPC17">
+     <property name="text">
+      <string>PC</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Band stacks:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QCheckBox" name="chkRGB">
+     <property name="text">
+      <string>rgb</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="2">
+    <widget class="QCheckBox" name="chk652">
+     <property name="text">
+      <string>652</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="4">
+    <widget class="QCheckBox" name="chk642">
+     <property name="text">
+      <string>642</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QCheckBox" name="chk742">
+     <property name="text">
+      <string>742</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2">
+    <widget class="QCheckBox" name="chk453">
+     <property name="text">
+      <string>453</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="4">
+    <widget class="QCheckBox" name="chk765">
+     <property name="text">
+      <string>765</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QCheckBox" name="chk764">
+     <property name="text">
+      <string>764</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="6">
+    <widget class="QPushButton" name="BtnOk">
+     <property name="text">
+      <string>Ok</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
