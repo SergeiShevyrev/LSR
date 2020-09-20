@@ -5,7 +5,7 @@ Software uses 3rd party libraries: numpy, pandas, elevation, richdem, pyQT.
 
 Developer: Sergei Shevyrev (http://lefa.geologov.net). MIT License.
 
-If you have found this software useful for your project of education, please cite one (or more) of the following articles:
+If you have found this software useful for your project or teaching/learning, please cite one (or more) of the following articles:
 
 1. Shevyrev, S, Carranza, EJM. Modelling of geodynamic regimes of precious metal‐bearing porphyry deposits: Lazurnoe deposit (Sikhote–Alin Belt, Far East) case study. Geological Journal. 2020; 1– 20. https://doi.org/10.1002/gj.3935
 2. Shevyrev, S. Neotectonics, remote sensing and erosion cut of ore-controlling structures of the Mnogovershinnoe gold-silver deposit (Khabarovsk Krai, Russian Far East). Ore Geology Reviews, Volume 108, May 2019, Pages 8-22.https://doi.org/10.1016/j.oregeorev.2018.11.016 
