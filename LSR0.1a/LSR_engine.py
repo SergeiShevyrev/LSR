@@ -123,8 +123,10 @@ def engineTopo(in_path='None',out_path='None',shpfilepath='None',drm_filepath='N
         #resolution in meters
         srtm_dpx=(srtm_ext[3][0]-srtm_ext[0][0])/srtm_xsize
         srtm_dpy=(srtm_ext[0][1]-srtm_ext[2][1])/srtm_ysize
-        
-        
+        """
+        print("srtm_ext={}".format(srtm_ext))
+        print("shp_extent={}".format(shp_extent))
+        """
         if check_shp_inside_raster(srtm_ext,shp_extent):
     #        sampleSrtmImage,ColMinIndSRTM,RowMinIndSRTM =crop_by_shp(shp_extent,srtm_ext,\
     #                                                    srtm_dpx,srtm_dpy,srtm_band_array); 
@@ -319,13 +321,13 @@ def engineTopo(in_path='None',out_path='None',shpfilepath='None',drm_filepath='N
         if ('rgb' in bandStacks):
             truecolorRGB=image_stack(bands['band4'],bands['band3'],bands['band2'],do_norm8=1,do_show=0)  
         
-        #Комбинация 7-4-2. Изображение близкое к естественным цветам, позволяет анализировать состояние атмосферы и дым. Здоровая растительность выглядит ярко зеленой, ярко розовые участки детектируют открытую почву, коричневые и оранжевые тона характерны для разреженной растительности.
+        #Комбинация 7-4-2. Изображение близкое к естественным цветам, позволяет анализировать состояние атмосферы и дым. Здоровая растительность выглядит ярко зеленой, ярко розовые участки детектируют открытую почву, коричневые и оранжевые тона характерны для разреженной растительности.
         if ('742' in bandStacks):
             b742RGB=image_stack(bands['band7'],bands['band4'],bands['band2'],do_norm8=1,do_show=0)
-        #Комбинация 5-4-1. Изображение близкое к предыдущему, позволяет анализировать сельскохозяйственные культуры
+        #Комбинация 5-4-1. Изображение близкое к предыдущему, позволяет анализировать сельскохозяйственные культуры
         if ('652' in bandStacks):
             b652RGB=image_stack(bands['band6'],bands['band5'],bands['band2'],do_norm8=1,do_show=0)
-        #Комбинация 4-5-3. Изображение позволяет четко различить границу между водой и сушей, с большой точностью будут детектироваться водные объекты внутри суши. Эта комбинация отображает растительность в различных оттенках и тонах коричневого, зеленого и оранжевого, дает возможность анализа влажности и полезны при изучении почв и растительного покрова.
+        #Комбинация 4-5-3. Изображение позволяет четко различить границу между водой и сушей, с большой точностью будут детектироваться водные объекты внутри суши. Эта комбинация отображает растительность в различных оттенках и тонах коричневого, зеленого и оранжевого, дает возможность анализа влажности и полезны при изучении почв и растительного покрова.
         if ('453' in bandStacks):
             b453RGB=image_stack(bands['band4'],bands['band5'],bands['band3'],do_norm8=1,do_show=0)
         
@@ -342,11 +344,11 @@ def engineTopo(in_path='None',out_path='None',shpfilepath='None',drm_filepath='N
         if ('NDVI' in products):
             NDVI=(bands['band5']-bands['band4'])/(bands['band5']+bands['band4']) #NDVI
         if ('IOA' in products) or ('CA' in products):
-            IOA=(bands['band4']/bands['band2']) #Iron oxide alteration [Doğan Aydal, 2007]
+            IOA=(bands['band4']/bands['band2']) #Iron oxide alteration [Doğan Aydal, 2007]
         if ('HA' in products) or ('CA' in products):
-            HA=(bands['band7']/bands['band2'])#Hydroxyl alteration [Doğan Aydal, 2007]
+            HA=(bands['band7']/bands['band2'])#Hydroxyl alteration [Doğan Aydal, 2007]
         if ('CM' in products):
-            CM=(bands['band7']/bands['band6']) #Clay minerals [Doğan Aydal, 2007]
+            CM=(bands['band7']/bands['band6']) #Clay minerals [Doğan Aydal, 2007]
         
         #compute PCA 
         if ('PC' in products):
@@ -448,7 +450,7 @@ def engineTopo(in_path='None',out_path='None',shpfilepath='None',drm_filepath='N
             print("Result for the RANDOMIZED solver")
             for ev in range(0,len(eigenvalues[:,1,1])):
                 PCAcomp=eigenvalues[ev,:,:].reshape(m,n);
-                saveGeoTiff(PCAcomp,os.path.join(dir_products_path,"PCA{}_".format(ev+1)+pathrowfolder+"_"+datefolder+".tif"),gdal_object,ColMinInd,RowMinInd);    
+                saveGeoTiff(PCAcomp,os.path.join(dir_products_path,"PCA{}_".format(ev+1)+".tif"),gdal_object,ColMinInd,RowMinInd);    
             
         print("Products data were saved.")
         return 1
