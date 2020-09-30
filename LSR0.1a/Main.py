@@ -64,7 +64,7 @@ class Main(base_1, form_1):
      
         self.statusBar = QStatusBar()
         self.setStatusBar(self.statusBar)
-        self.statusBar.showMessage("Landsat Shadow Remove v.0.1a");  
+        self.statusBar.showMessage("Landsat Shadow Removal v.0.1a");  
 
         #button procedures connect
         self.BtnSetInputDir.clicked.connect(self.openInputWindow)
@@ -296,19 +296,21 @@ class Configure(base_3, form_3):
         #check chekboxes state and create product string here!!!
         """
         looking for the possible regimes
-        main.products=['NDVI', 'AOI', 'HA', 'CM', 'CA', 'PC'];
+        main.products=['NDVI', 'IOA', 'HA', 'CM', 'CA', 'PC'];
         main.bandStacks=['rgb', '742', '652', '453', '642', '764','765'];
         """
         main.isSCS_C=self.chkSCS_C.isChecked();
         main.products=[]; main.bandStacks=[];
         for chbox in self.findChildren(QCheckBox):
             if chbox.isChecked()==True:
+                if chbox.text() == "rgb":
+                    main.bandStacks.append("rgb");
                 if chbox.text() == "SCS+C":
                     main.isSCS_C = True;
                 if chbox.text() == "NDVI":
                     main.products.append("NDVI");
-                if chbox.text() == "AOI":
-                    main.products.append("AOI");
+                if chbox.text() == "IOA":
+                    main.products.append("IOA");
                 if chbox.text() == "HA":
                     main.products.append("HA");
                 if chbox.text() == "CM":
