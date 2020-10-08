@@ -254,10 +254,10 @@ def engineTopo(in_path='None',out_path='None',shpfilepath='None',drm_filepath='N
             band_array=np.uint16(sampleImage*\
                     ((np.cos(np.deg2rad(SolarZenith))*np.cos(np.deg2rad(slope_band_cropped))+C)\
                      /(C+Cos_i)));
-            #pic_show(sampleImage,"landsat initial");
-            #hist_show(sampleImage);
-            #pic_show(band_array,"landsat SCS corrected");
-            #hist_show(band_array);                       
+            pic_show(sampleImage,"landsat initial");
+            hist_show(sampleImage);
+            pic_show(band_array,"landsat SCS corrected");
+            hist_show(band_array);                       
         else: #no topocorrection
             print("No topocorrection was selected..")
             band_array=copy.copy(sampleImage); #no operation
@@ -319,25 +319,25 @@ def engineTopo(in_path='None',out_path='None',shpfilepath='None',drm_filepath='N
         #create RGB stacks:
         #truecolor
         if ('rgb' in bandStacks):
-            truecolorRGB=image_stack(bands['band4'],bands['band3'],bands['band2'],do_norm8=1,do_show=0)  
+            truecolorRGB=image_stack(bands['band4'],bands['band3'],bands['band2'],do_norm8=0,do_show=0)  
         
         #Комбинация 7-4-2. Изображение близкое к естественным цветам, позволяет анализировать состояние атмосферы и дым. Здоровая растительность выглядит ярко зеленой, ярко розовые участки детектируют открытую почву, коричневые и оранжевые тона характерны для разреженной растительности.
         if ('742' in bandStacks):
-            b742RGB=image_stack(bands['band7'],bands['band4'],bands['band2'],do_norm8=1,do_show=0)
+            b742RGB=image_stack(bands['band7'],bands['band4'],bands['band2'],do_norm8=0,do_show=0)
         #Комбинация 5-4-1. Изображение близкое к предыдущему, позволяет анализировать сельскохозяйственные культуры
         if ('652' in bandStacks):
-            b652RGB=image_stack(bands['band6'],bands['band5'],bands['band2'],do_norm8=1,do_show=0)
+            b652RGB=image_stack(bands['band6'],bands['band5'],bands['band2'],do_norm8=0,do_show=0)
         #Комбинация 4-5-3. Изображение позволяет четко различить границу между водой и сушей, с большой точностью будут детектироваться водные объекты внутри суши. Эта комбинация отображает растительность в различных оттенках и тонах коричневого, зеленого и оранжевого, дает возможность анализа влажности и полезны при изучении почв и растительного покрова.
         if ('453' in bandStacks):
-            b453RGB=image_stack(bands['band4'],bands['band5'],bands['band3'],do_norm8=1,do_show=0)
+            b453RGB=image_stack(bands['band4'],bands['band5'],bands['band3'],do_norm8=0,do_show=0)
         
         #after Aydal, 2007
         if ('642' in bandStacks):
-            b642RGB=image_stack(bands['band6'],bands['band4'],bands['band2'],do_norm8=1,do_show=0)   
+            b642RGB=image_stack(bands['band6'],bands['band4'],bands['band2'],do_norm8=0,do_show=0)   
         if ('765' in bandStacks):
-            b765RGB=image_stack(bands['band7'],bands['band6'],bands['band5'],do_norm8=1,do_show=0)   
+            b765RGB=image_stack(bands['band7'],bands['band6'],bands['band5'],do_norm8=0,do_show=0)   
         if ('764' in bandStacks):
-            b764RGB=image_stack(bands['band7'],bands['band6'],bands['band4'],do_norm8=1,do_show=0)   
+            b764RGB=image_stack(bands['band7'],bands['band6'],bands['band4'],do_norm8=0,do_show=0)   
         
         
         #create indexes
